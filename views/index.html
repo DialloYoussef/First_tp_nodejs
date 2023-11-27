@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/app.js" defer></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Formulaire Node.js</title>
+  <link rel="icon" href="data:,">
+</head>
+<body class="bg-gray-100 p-8">
+  <h1 class="text-3xl font-bold text-center mb-8">Formulaire Node.js</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data" class="max-w-md bg-white p-6 rounded-md shadow-md mx-auto">
+    <label for="nom" class="block text-sm font-medium text-gray-600">Nom:</label>
+    <input type="text" name="nom" required class="mt-1 p-2 w-full border rounded-md">
+
+    <label for="prenom" class="block mt-4 text-sm font-medium text-gray-600">Prénom:</label>
+    <input type="text" name="prenom" required class="mt-1 p-2 w-full border rounded-md">
+
+    <label class="block mt-4 text-sm font-medium text-gray-600">Genre:</label>
+    <div class="flex">
+      <input type="radio" name="genre" id="homme" value="homme" class="mt-1 mr-2" checked>
+      <label class="mr-4" for="homme" >Homme</label>
+
+      <input type="radio" name="genre" id="femme" value="femme" class="mt-1 mr-2">
+      <label for="femme">Femme</label>
+    </div>
+
+    <label for="pays" class="block mt-4 text-sm font-medium text-gray-600">Pays:</label>
+    <select name="pays" id="pays" required class="mt-1 p-2 w-full border rounded-md">
+      <!-- Options dynamiques seront ajoutées ici -->
+    </select>
+
+    <label for="auteurs" class="block mt-4 text-sm font-medium text-gray-600">Auteurs:</label>
+    <select name="auteurs" id="auteurs" required class="mt-1 p-2 w-full border rounded-md">
+      <!-- Options dynamiques seront ajoutées ici -->
+    </select>
+
+    <label for="cv" class="block mt-4 text-sm font-medium text-gray-600">CV (PDF):</label>
+    <input type="file" name="cv" accept=".pdf" required class="mt-1 p-2 w-full border rounded-md">
+
+    <label for="images" class="block mt-4 text-sm font-medium text-gray-600">Images (jpg, png, ...):</label>
+    <input type="file" name="images" accept="image/*" multiple class="mt-1 p-2 w-full border rounded-md">
+
+    <input type="submit" value="Envoyer" class="mt-6 px-4 py-2 bg-blue-500 text-white rounded-md cursor-pointer">
+  </form>
+
+</body>
+</html>
